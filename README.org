@@ -1,2 +1,13 @@
 * Stego
-A steganography project
+A steganography project using the least significant bit method.
+** LSB method
+This method encodes the message in the least siginificant bit of each "word" of the file.
+In the case of images, this "word" is each R,G and B value of each pixel. Therefore, the
+capacity of a photo is more or less (3*M*N)/8, being N and M the pixels per row and per
+column of the photo.
+
+** Encryption
+In order to make the steganographied image indistinguishible from an original one
+(without having access to the original), the hidden message is encrypted using AES-256
+ and a given password. Thus, the analysis of the least significant bits of each word
+may not yield any result on whether it contains a secret message or not.
