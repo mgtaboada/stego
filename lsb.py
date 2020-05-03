@@ -67,12 +67,10 @@ def encode_message_in_buffer (message,imbuff):
         imbuff = imbuffx
     i=0
     for b in get_bits (message):
-        #print("Bit: {}".format(b))
         if b == 1:
             imbuff [i] |=1
         else:
             imbuff[i] &=~1
-        #print("Byte: {:b}".format(imbuff[i]))
         i+=1
     return bytes(imbuff)
 
